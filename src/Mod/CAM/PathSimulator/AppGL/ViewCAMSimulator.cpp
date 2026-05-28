@@ -315,4 +315,65 @@ DlgCAMSimulator& ViewCAMSimulator::dlg()
     return *mDlg;
 }
 
+static QPointer<PopupViewCAMSimulator> popupViewCAMSimulator;
+
+PopupViewCAMSimulator::PopupViewCAMSimulator(QWidget* parent)
+    : QWindow(parent)
+{
+
+    // Under certain conditions, e.g. when docking/undocking the cam simulator, we need to create a
+    // new widget (due to some OpenGL bug). The new widget becomes THE cam simulator.
+
+    popupViewCAMSimulator = this;
+
+    mDlg = new DlgCAMSimulator;
+    mDlg->setAttribute(Qt::WA_TransparentForMouseEvents);
+
+    mGui = new GuiDisplay;
+    mDummyViewer = new Dummy3DViewer;
+
+    mDlg->connectTo(*mGui, *mDummyViewer);
+
+    connect(mDlg, &DlgCAMSimulator::simulationStarted, this, &PopupViewCAMSimulator::onSimulationStarted);
+
+    auto stack = new QStackedWidget;
+    static_cast<QStackedLayout*>(stack->layout())->setStackingMode(QStackedLayout::StackAll);
+
+    stack->addWidget(mGui);
+    stack->addWidget(mDlg);
+
+
+    stack->addWidget(mDummyViewer);
+
+    setCentralWidget(stack);
+}
+
+void PopupViewCAMSimulator::onSimulationStarted()
+{
+    // fit camera to scene
+
+    mDummyViewer->viewAll();
+
+    // window title and activate
+
+    App::Document* doc = App::GetApplication().getActiveDocument();
+    setWindowTitle(tr("%1 - New CAM Simulator").arg(QString::fromUtf8(doc->getName())));
+
+    show();
+}
+
+PopupViewCAMSimulator& PopupViewCAMSimulator::instance()
+{
+    if (!popupViewCAMSimulator) {
+        popupViewCAMSimulator = new PopupViewCAMSimulator(nullptr);
+    }
+
+    return *popupViewCAMSimulator;
+}
+
+DlgCAMSimulator& PopupViewCAMSimulator::dlg()
+{
+    return *mDlg;
+}
+
 }  // namespace CAMSimulator

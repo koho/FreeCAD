@@ -187,7 +187,7 @@ void DlgCAMSimulator::cloneFrom(const DlgCAMSimulator& from)
 
 DlgCAMSimulator* DlgCAMSimulator::instance()
 {
-    return &ViewCAMSimulator::instance().dlg();
+    return &PopupViewCAMSimulator::instance().dlg();
 }
 
 void DlgCAMSimulator::setAnimating(bool animating)

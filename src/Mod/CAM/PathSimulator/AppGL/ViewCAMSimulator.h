@@ -25,6 +25,7 @@
 #pragma once
 
 #include <Gui/MDIViewWithCamera.h>
+#include <QWindow>
 
 class SoCamera;
 
@@ -77,5 +78,24 @@ protected:
     std::unique_ptr<View3DSettings> mViewSettings;
     std::unique_ptr<CAMSettings> mCAMSettings;
 };
+
+class PopupViewCAMSimulator: public QWindow
+{
+    Q_OBJECT
+public:
+    explicit PopupViewCAMSimulator(QWindow* parent = nullptr);
+    ~PopupViewCAMSimulator() override;
+
+    static PopupViewCAMSimulator& instance();
+    DlgCAMSimulator& dlg();
+
+private Q_SLOTS:
+    void onSimulationStarted();
+
+protected:
+    GuiDisplay* mGui = nullptr;
+    DlgCAMSimulator* mDlg = nullptr;
+    Dummy3DViewer* mDummyViewer = nullptr;
+}
 
 }  // namespace CAMSimulator
