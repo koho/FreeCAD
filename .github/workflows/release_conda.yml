@@ -1,5 +1,8 @@
 name: Release Conda
 on:
+  push:
+    branches:
+     - 'conda'
   release:
     types: [created]
   workflow_dispatch:
