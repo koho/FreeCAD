@@ -139,7 +139,7 @@ requirements:
         - xorg-xproto
 
   run:
-    - blas * openblas*
+    - blas
     - blinker
     - calculix
     - debugpy
