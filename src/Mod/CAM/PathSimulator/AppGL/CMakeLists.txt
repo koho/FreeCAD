@@ -81,10 +81,11 @@ SET(CAMSimulator_SRCS_precomp
     ${CAMSimulator_SRCS_Module}
     ${CAMSimulator_SRCS_Python}
 )
-
+qt_add_resources(PathResource_SRCS ../../Gui/Resources/Path.qrc)
 SET(CAMSimulator_SRCS
     ${CAMSimulator_SRCS_precomp}
     ${CAMSimulator_SRCS_Core}
+    ${PathResource_SRCS}
 )
 
 add_library(CAMSimulator SHARED ${CAMSimulator_SRCS})

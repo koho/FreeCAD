@@ -96,6 +96,6 @@ protected:
     GuiDisplay* mGui = nullptr;
     DlgCAMSimulator* mDlg = nullptr;
     Dummy3DViewer* mDummyViewer = nullptr;
-}
+};
 
 }  // namespace CAMSimulator
