@@ -44,6 +44,7 @@ class CAMSettings;
 
 class ViewCAMSimulator: public Gui::MDIViewWithCamera
 {
+    Q_OBJECT
 public:
     ViewCAMSimulator(
         Gui::Document* pcDocument,
