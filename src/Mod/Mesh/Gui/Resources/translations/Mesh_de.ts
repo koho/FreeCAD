@@ -1571,6 +1571,10 @@ Wenn gilt:
     </message>
     <message>
       <location filename="../../RemeshGmsh.cpp" line="201"/>
+      <source>Time</source>
+      <translation>Zeit</translation>
+    </message>
+    <message>
       <location filename="../../RemeshGmsh.cpp" line="259"/>
       <source>Time:</source>
       <translation>Zeit:</translation>
@@ -1596,7 +1600,7 @@ Wenn gilt:
     <message>
       <location filename="../../MeshEditor.cpp" line="255"/>
       <source>Cannot add triangle to avoid non-manifolds.</source>
-      <translation type="unfinished">Cannot add triangle to avoid non-manifolds.</translation>
+      <translation>Ein Dreieck kann nicht hinzugefügt werden, um Nicht-Mannigfaltigkeiten zu vermeiden.</translation>
     </message>
     <message>
       <location filename="../../MeshEditor.cpp" line="407"/>
@@ -2259,8 +2263,8 @@ Siehe https://openscad.org/, um es zu installieren.</translation>
       <translation>Farben anzeigen</translation>
     </message>
     <message>
-      <location filename="../../ViewProviderCurvature.cpp" line="535"/>
       <location filename="../../ViewProvider.cpp" line="1701"/>
+      <location filename="../../ViewProviderCurvature.cpp" line="535"/>
       <source>Leave Info Mode</source>
       <translation>Informations-Modus verlassen</translation>
     </message>

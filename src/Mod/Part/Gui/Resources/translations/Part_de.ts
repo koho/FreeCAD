@@ -1244,8 +1244,8 @@
     </message>
     <message>
       <location filename="../../Command.cpp" line="1405"/>
-      <source>Applies a boolean operations with the selected shapes</source>
-      <translation>Wendet eine boolesche Operation mit den ausgewählten Formen an</translation>
+      <source>Applies a boolean operation with the selected shapes</source>
+      <translation>Führt eine boolesche Operation mit den ausgewählten Formen durch</translation>
     </message>
   </context>
   <context>
@@ -7722,7 +7722,7 @@ oder mit den Formen innerhalb einer Verbindung durch.
     <message>
       <location filename="../../PatternParametersWidget.cpp" line="940"/>
       <source>Reset spacing</source>
-      <translation type="unfinished">Reset spacing</translation>
+      <translation>Abstand zurücksetzen</translation>
     </message>
   </context>
   <context>
