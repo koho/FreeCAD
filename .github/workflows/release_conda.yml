@@ -85,7 +85,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: conda-${{ matrix.target }}
-          path: package/rattler-build/.pixi/bld/freecad/**/output/${{ matrix.target }}/*.conda
+          path: package/rattler-build/.pixi/bld/freecad/*/output/${{ matrix.target }}/*.conda
 
       ## Needed if running on a self-hosted runner:
       # - name: Clean up keychain and provisioning profile
